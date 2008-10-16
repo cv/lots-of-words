@@ -1,0 +1,27 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2//EN">
+<html>
+<head>
+<title>Lexicon</title>
+<script src="http://www.google.com/jsapi"></script>
+<script type="text/javascript" language="javascript">
+  google.load("jquery", "1.2.6");
+  
+  google.setOnLoadCallback(function() {
+    $('input').click(function() {
+      $('.translate').each(function() {
+        var el = $(this)
+      
+        $.getJSON('http://lotsofwords.com/en/ru/' + el.html().replace(' ', '+'), function(data) {
+          el.html(data["rows"][0]["value"]["target_word"])
+        })
+      })
+      $('input').hide()
+    })
+  })
+</script>
+</head>
+<body>
+  <p>In <span class="translate">Soviet Union</span>, <span class="translate">Russian</span> translates YOU!</p>
+  <input type="button" value="Translate">
+</body>
+</html>
