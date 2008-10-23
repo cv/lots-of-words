@@ -1,0 +1,4 @@
+Lots of Words
+=============
+
+This is the backend Merb app. All the fun really happens in JS and in CouchDB, so nothing really exciting to see here.
