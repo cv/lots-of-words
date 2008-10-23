@@ -10,6 +10,8 @@ require 'lots_of_words'
 require 'languages'
 
 Merb::BootLoader.before_app_loads do
+  $couchdb = CouchRest.new('http://localhost:5984')
+  $lexicon = $couchdb.database('lexicon')
 end
  
 Merb::BootLoader.after_app_loads do
