@@ -1,33 +1,23 @@
-!!!
-%html
-  %head
-    %title
-      Lexicon
-    %script{ :src => "http://www.google.com/jsapi" }/
-    
-    :javascript
-      google.load("jquery", "1.2.6");
-      
-      google.setOnLoadCallback(function() {
-        $('input').click(function() {
-          $('.translate').each(function() {
-            var el = $(this)
-      
-            $.getJSON('/en/ru/' + el.html().replace(' ', '+'), function(data) {
-              el.html(data["rows"][0]["value"]["target_word"])
-            })
-          })
-          $('input').hide()
+- throw_content :for_javascript do
+  :plain
+    $('input').click(function() {
+      $('.translate').each(function() {
+        var el = $(this)
+
+        $.getJSON('/en/ru/' + el.html().replace(' ', '+'), function(data) {
+          el.html(data["rows"][0]["value"]["target_word"])
         })
       })
+      $('input').hide()
+    })
 
-  %body
-    %p
-      In
-      %span.translate
-        Soviet Union
-      ,
-      %span.translate
-        Russian
-      translates YOU!
-    %input{ :type => "button", :value => "Translate" }/
+%p
+  In
+  %span.translate
+    Soviet Union
+  ,
+  %span.translate
+    Russian
+  translates YOU!
+
+%input{ :type => "button", :value => "Translate" }/

@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %title
+      Lots of words
+    %script{ :src => "http://www.google.com/jsapi" }/
+    
+    %script{ :type => 'text/javascript' }
+      :plain
+        google.load("jquery", "1.2.6");
+
+        google.setOnLoadCallback(function() {
+          #{ catch_content :for_javascript if thrown_content? :for_javascript }
+        })
+
+  %body
+    = catch_content :for_layout
