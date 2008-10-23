@@ -8,7 +8,7 @@ class Languages < Application
     render
   end
   
-  def links
+  def link
     render
   end
   
