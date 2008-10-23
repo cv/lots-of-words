@@ -27,7 +27,7 @@ Merb::Config.use {|c|
   c[:framework]           = {},
   c[:log_level]           = :debug,
   c[:log_stream]          = STDOUT,
-  # c[:log_file]            = Merb.root / "log" / "merb.log",
+  c[:log_file]            = Merb.root / "log" / "merb.log",
   c[:use_mutex]           = true,
   c[:session_store]       = 'cookie',
   c[:session_id_key]      = '_session_id',
