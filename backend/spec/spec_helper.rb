@@ -6,8 +6,8 @@ if (local_gem_dir = File.join(File.dirname(__FILE__), '..', 'gems')) && $BUNDLE.
   $BUNDLE = true; Gem.clear_paths; Gem.path.unshift(local_gem_dir)
 end
 
-require "spec"
-require "merb-core"
+require 'spec'
+require 'merb-core'
 
 Merb::Config.use do |c|
   c[:session_store] = "memory"

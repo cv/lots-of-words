@@ -1,8 +1,13 @@
-use_orm :none
 use_test :rspec
-use_template_engine :erb
+use_template_engine :haml
 
-dependency "couchrest"
+dependencies %w{
+  couchrest
+}
+
+require 'application'
+require 'lots_of_words'
+require 'languages'
 
 Merb::BootLoader.before_app_loads do
 end
