@@ -1,13 +1,12 @@
 use_test :rspec
 use_template_engine :haml
 
-dependencies %w{
-  couchrest
-}
+require 'jchris-couchrest'
 
 require 'application'
 require 'lots_of_words'
 require 'languages'
+require 'models'
 
 Merb::BootLoader.before_app_loads do
   $couchdb = CouchRest.new('http://localhost:5984')
