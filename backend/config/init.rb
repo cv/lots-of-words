@@ -1,7 +1,7 @@
 use_test :rspec
 use_template_engine :haml
 
-require 'jchris-couchrest'
+require 'couchrest'
 
 require 'application'
 require 'lots_of_words'
