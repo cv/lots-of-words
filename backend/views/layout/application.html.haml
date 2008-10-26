@@ -1,10 +1,22 @@
 !!!
 %html
   %head
-    %title
-      Lots of words
-    %script{ :src => "http://www.google.com/jsapi" }/
-    
+    %title Lots of words
+    %style{ :type => 'text/css' }
+      :plain
+        #container {
+          font-family: helvetica;
+          margin-left: 400px;
+          padding-left: 50px;
+          border-left: 15px solid #F00;
+          height: 100%;
+        }
+        
+        h1 {
+          font-size: 800%;
+        }
+
+    %script{ :src => "http://www.google.com/jsapi" }/    
     %script{ :type => 'text/javascript' }
       :plain
         google.load("jquery", "1.2.6");
@@ -14,4 +26,5 @@
         })
 
   %body
-    = catch_content :for_layout
+    #container
+      = catch_content :for_layout
