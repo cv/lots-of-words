@@ -34,7 +34,7 @@
         Leave some feedback!
         
         %form{ :action => '/feedbacks', :method => 'post' }
-          %input{ :name => 'uri', :type => 'hidden' }
+          %input{ :name => 'uri', :type => 'hidden', :value => request.uri }
           %textarea{ :name => 'comment', :rows => 5, :cols => '70' }
           %br
           %input{ :type => 'submit' }
