@@ -6,7 +6,7 @@ class Feedbacks < Application
       :comment => params[:comment],
     })
 
-    redirect request.uri
+    redirect params[:uri]
   end
   
 end
