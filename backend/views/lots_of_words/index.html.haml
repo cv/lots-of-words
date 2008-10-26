@@ -4,7 +4,7 @@
       $('.translate').each(function() {
         var el = $(this)
 
-        $.getJSON('/en/ru/' + el.html().replace(' ', '+'), function(data) {
+        $.getJSON('/en/ru/' + el.html().replace(' ', '+') + '.json', function(data) {
           el.html(data["rows"][0]["value"]["target_word"])
         })
       })

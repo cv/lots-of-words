@@ -3,3 +3,24 @@
 = @link["rows"].first["doc"]["source_word"]
 ➫ 
 = @link["rows"].first["doc"]["target_word"]
+
+%p
+  #source-photo
+
+%p
+  #target-photo
+
+:javascript
+  showPhoto = function(data, div) {
+    var photo = data["photos"]["photo"][0];
+    $(div).html(
+      '<img src="http://farm' + photo["farm"] + '.static.flickr.com/' + photo["server"] + '/' + photo["id"] + '_' + photo["secret"] + '.jpg"/>'
+    );  
+  }
+
+  source = function(data) { showPhoto(data, '#source-photo') }
+  target = function(data) { showPhoto(data, '#target-photo') }
+
+%script{ :type => 'text/javascript', :src => "http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=566bdab87ff04dca0c70e0f787bc9c59&tags=#{@link["rows"].first["doc"]["source_word"]}&format=json&sort=interestingness-desc&content_type=json&per_page=1&jsoncallback=source"}
+
+%script{ :type => 'text/javascript', :src => "http://api.flickr.com/services/rest/?method=flickr.photos.search&api_key=566bdab87ff04dca0c70e0f787bc9c59&tags=#{@link["rows"].first["doc"]["target_word"]}&format=json&sort=interestingness-desc&content_type=json&per_page=1&jsoncallback=target"}
