@@ -29,3 +29,10 @@
   %body
     #container
       = catch_content :for_layout
+      
+      #comments
+        Leave some feedback!
+        
+        %form{ :action => 'feedbacks', :method => 'post' }
+          %textarea{ :name => 'comment' }
+          %submit

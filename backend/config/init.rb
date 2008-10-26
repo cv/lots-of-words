@@ -6,6 +6,7 @@ require 'couchrest'
 require 'application'
 require 'lots_of_words'
 require 'languages'
+require 'feedbacks'
 
 Merb::BootLoader.before_app_loads do
   $couchdb = CouchRest.new('http://localhost:5984')
@@ -17,6 +18,7 @@ end
 
 Merb::Router.prepare do
   match('/').                               to(:controller => "lots_of_words", :action => 'index').      name(:home)
+  match('/feedbacks(.:format)')            .to(:controller => "feedbacks",     :action => 'create').     name(:feedbacks)
   match('/:language(.:format)').            to(:controller => "languages",     :action => 'counts').     name(:counts)
   match('/:source/:target(.:format)').      to(:controller => "languages",     :action => 'link_counts').name(:link_counts)
   match('/:source/:target/:term(.:format)').to(:controller => "languages",     :action => 'link').       name(:link)

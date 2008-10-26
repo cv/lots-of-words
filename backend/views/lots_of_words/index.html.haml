@@ -4,8 +4,8 @@
       $('.translate').each(function() {
         var el = $(this)
 
-        $.getJSON('/en/ru/' + $.trim(el.html().replace(' ', '+')) + '.json', function(data) {
-          el.html(data["rows"][0]["value"]["target_word"])
+        $.getJSON('/en/ru/' + $.trim(el.html()).replace(' ', '+') + '.json', function(data) {
+          el.html(data["rows"][0]["doc"]["target_word"].replace(/\(.*?\)/, ''))
         })
       })
       $('input').hide()
