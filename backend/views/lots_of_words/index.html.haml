@@ -8,7 +8,7 @@
           el.html(data["rows"][0]["doc"]["target_word"].replace(/\(.*?\)/, ''))
         })
       })
-      $('input').hide()
+      $('#translate-button').hide()
     })
 
 %p
@@ -20,4 +20,4 @@
     Russian
   translates YOU!
 
-%input{ :type => "button", :value => "Translate" }/
+%input{ :id => 'translate-button', :type => "button", :value => "Translate" }/
