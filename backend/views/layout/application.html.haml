@@ -4,16 +4,18 @@
     %title Lots of words
     %style{ :type => 'text/css' }
       :plain
-        #container {
-          font-family: helvetica;
-          margin-left: 400px;
-          padding-left: 50px;
-          border-left: 15px solid #F00;
-          height: 100%;
+        html { font-family: helvetica; }
+        
+        .big {
+          font-size: 60pt;
+          float: left;
+          clear: both;
         }
         
-        h1 {
-          font-size: 800%;
+        .photos {
+          padding-top: 1em;
+          float: right;
+          clear: right;
         }
 
     %script{ :src => "http://www.google.com/jsapi" }
@@ -30,11 +32,11 @@
     #container
       = catch_content :for_layout
       
-      #comments
-        Leave some feedback!
-        
-        %form{ :action => '/feedbacks', :method => 'post' }
-          %input{ :name => 'uri', :type => 'hidden', :value => request.uri }
-          %textarea{ :name => 'comment', :rows => 5, :cols => '70' }
-          %br
-          %input{ :type => 'submit' }
+      / #comments
+      /   Leave some feedback!
+      /   
+      /   %form{ :action => '/feedbacks', :method => 'post' }
+      /     %input{ :name => 'uri', :type => 'hidden', :value => request.uri }
+      /     %textarea{ :name => 'comment', :rows => 5, :cols => '70' }
+      /     %br
+      /     %input{ :type => 'submit' }
