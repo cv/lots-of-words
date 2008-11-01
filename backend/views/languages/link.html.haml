@@ -16,7 +16,9 @@
     var photos = data["photos"]["photo"];
     for(i in photos) {
       $(div).append(
-        '<img src="http://farm' + photos[i]["farm"] + '.static.flickr.com/' + photos[i]["server"] + '/' + photos[i]["id"] + '_' + photos[i]["secret"] + '_s.jpg"/>'
+        '<a href="http://www.flickr.com/photos/' + photos[i]['owner'] + '/' + photos[i]['id'] + '">'+
+        '<img src="http://farm' + photos[i]['farm'] + '.static.flickr.com/' + photos[i]['server'] + '/' + photos[i]['id'] + '_' + photos[i]['secret'] + '_s.jpg"/>'+
+        '</a>'
       )    
     }
   }

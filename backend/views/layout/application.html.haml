@@ -5,7 +5,8 @@
     %style{ :type => 'text/css' }
       :plain
         html { font-family: helvetica; }
-        
+        img { border: none; }
+
         .big {
           font-size: 60pt;
           float: left;
@@ -17,7 +18,7 @@
           float: right;
           clear: right;
         }
-
+        
     %script{ :src => "http://www.google.com/jsapi" }
 
     %script{ :type => 'text/javascript' }
@@ -32,11 +33,11 @@
     #container
       = catch_content :for_layout
       
-      / #comments
-      /   Leave some feedback!
-      /   
-      /   %form{ :action => '/feedbacks', :method => 'post' }
-      /     %input{ :name => 'uri', :type => 'hidden', :value => request.uri }
-      /     %textarea{ :name => 'comment', :rows => 5, :cols => '70' }
-      /     %br
-      /     %input{ :type => 'submit' }
+    / #comments
+    /   Leave some feedback!
+    /   
+    /   %form{ :action => '/feedbacks', :method => 'post' }
+    /     %input{ :name => 'uri', :type => 'hidden', :value => request.uri }
+    /     %textarea{ :name => 'comment', :rows => 5, :cols => '70' }
+    /     %br
+    /     %input{ :type => 'submit', :value => 'Send' }
