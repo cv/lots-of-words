@@ -1,0 +1,14 @@
+- throw_content :for_javascript do
+  $('#lookup input:first').focus()
+
+%form#lookup{ :action => '/', :method => 'post' }
+  %label{:for => 'source'} source
+  %input{:type => 'text', :size => '2', :name => 'source', :value => params[:source]}
+
+  %label{:for => 'term'} term
+  %input{:type => 'text', :size => '30', :name => 'term', :value => ''}
+
+  %label{:for => 'target'} target
+  %input{:type => 'text', :size => '2', :name => 'target', :value => params[:target]}
+
+  %input{ :type => 'submit', :value => 'Search' }

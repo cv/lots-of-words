@@ -1,3 +1,5 @@
+= partial 'shared/form'
+
 #source
   .big
     = @link["rows"].first["doc"]["source_word"]
@@ -13,7 +15,9 @@
 :javascript
   showPhoto = function(data, div) {
     if(!data["photos"]) return
+
     var photos = data["photos"]["photo"];
+    console.log(photos.length, 'photos loaded')
     for(i in photos) {
       $(div).append(
         '<a href="http://www.flickr.com/photos/' + photos[i]['owner'] + '/' + photos[i]['id'] + '">'+
