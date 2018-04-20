@@ -1,4 +1,6 @@
-# Dead
+# Lots of Words
+
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 This project contains a CouchDB / CouchREST experiment with indexing multiple Wikipedias across languages. It buildsa simple dictionary based on interwiki links.
 
